@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciao, Chow</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <style media="screen">
+        *,
+        *:before,
+        *:after {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #FFFFFF;
+            margin: 0;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            color: #FFFFFF;
+            font-size: 30px;
+            font-weight: 250;
+            letter-spacing: 0.5px;
+            backdrop-filter: blur(10px);
+            border: 3px solid rgba(198, 189, 179, 0.1);
+            background-color: rgba(202, 17, 31, 1);
+            padding: 12px;
+        }
+        .header h1 {
+           font-family: 'Poppins', sans-serif;
+            color: #FFFFFF;
+            font-size: 60px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            margin-left: 10%;
+        }
+        .header nav {
+            display: flex;
+        }
+        .header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+        .header nav ul li {
+            margin: 0 10px;
+        }
+        .header nav ul li a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 250;
+            font-size: 25px;
+            line-height: 1;
+            padding: 5px 0;
+        }
+        .header nav ul li a:hover {
+            color: #CCCCCC;
+        }
+        .header nav ul li a.active {
+            color: #CCCCCC;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown .dropbtn {
+            font-family: 'Poppins', sans-serif;
+            font-size: 25px;
+            font-weight: 250;
+            letter-spacing: 0.5px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 5px 0;
+            background-color: rgba(202, 17, 31, 1);
+            margin: 0;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(202, 17, 31, 1);
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            top: 100%;
+            left: 0;
+        }
+        .dropdown-content a {
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: 250;
+            letter-spacing: 0.5px;
+            color: #FFFFFF;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            color: #CCCCCC;
+            background-color: rgba(202, 17, 31, 1);
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .background-container {
+            background-image: url('bck.jpg');
+            opacity: 0.3;
+            width: 100%;
+            height: 400%;
+            position: absolute;
+            z-index: -1;
+        }
+.about-us-section {
+    text-align: center;
+    margin: px 0; /* Adjust margin as needed */
+}
+
+.about-us-image {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 400px; /* Limit the height */
+    object-fit: cover; /* Cover the area without distortion */
+}
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px; /* Space below the About Us image */
+}
+        .checkout-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin-top: 60px;
+    margin-bottom: 90px;
+}
+
+.checkout-form, .order-summary {
+    background-color: rgba(202, 17, 31, 1);
+    color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    width: 45%; /* Adjust width as needed */
+}
+
+.checkout-form h2, .order-summary h2 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.checkout-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+.checkout-form button {
+    background-color: rgba(202, 17, 31, 1);
+    color: #FFFFFF;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.checkout-form button:hover {
+    background-color: #AA141F;
+}
+
+.order-summary {
+    display: flex;
+    flex-direction: column;
+}
+
+.order-summary div {
+    margin: 5px 0;
+}
+        footer {
+            background-color: rgba(202, 17, 31, 1);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .footer-content a {
+            color: #ffc107;
+            text-decoration: none;
+        }
+        .footer-content a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Stack header items vertically */
+        align-items: center; /* Center align items */
+    }
+.header h1 {
+           font-family: 'Poppins', sans-serif;
+            color: #FFFFFF;
+            font-size: 45px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            margin-left: 2%;
+        }
+
+    .header .logo {
+        font-size: 17px; /* Smaller font size for logo */
+   
+    }
+
+    .header nav ul {
+        flex-direction: row; /* Keep nav items in a row */
+        width: 100%; /* Full width for nav */
+        justify-content: center; /* Center nav items */
+        padding: 0; /* Remove padding */
+    }
+
+    .header nav ul li {
+        margin: 0 10px; /* Space between navigation items */
+    }
+
+    .header nav ul li a {
+        font-size: 14px; /* Adjust font size for mobile */
+        display: block; /* Make the link a block element */
+        padding: 10px; /* Add padding for better touch targets */
+    }
+.dropdown .dropbtn {
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 250;
+        }
+        .dropdown-content a {
+             font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 250;
+        }
+
+    .content-container {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center align items */
+        width: 100%; /* Full width */
+        margin: 0; /* Reset margin */
+    }
+
+    .form-container, 
+    .page-description, 
+    .reviews-container {
+        width: 90%; /* Full width on smaller devices */
+        margin: 10px px; /* Space between elements */
+        height: auto; /* Allow height to adjust */
+    }
+
+    .reviews-container {
+        display: flex;
+        flex-direction: column; /* Stack reviews vertically */
+        align-items: center; /* Center align reviews */
+        width: 100%; /* Full width */
+    }
+
+    .review-arrows {
+        margin: 10px 0; /* Space around arrows */
+    }
+
+    .menu-card {
+        width: calc(50% - 10px); /* Two items per row */
+        height: auto; /* Allow height to adjust */
+    }
+
+    .blog-box {
+        width: calc(100% - 20px); /* Full width for blog boxes */
+    }
+
+    .promo-section {
+        flex-direction: column; /* Stack promo image and box vertically */
+        align-items: center; /* Center align items */
+        margin: 20px 0; /* Space around the promo section */
+    }
+
+    .promo-image-container {
+        width: 100%; /* Full width for the promo image */
+        margin-bottom: 10px; /* Space below the promo image */
+   
+    }
+
+    .promo-image {
+        width: 100%; /* Full width for the promo image */
+        height: auto; /* Maintain aspect ratio */
+        
+    }
+
+    .promo-box {
+        width: 90%; /* Full width for the promo box */
+        margin: 0; /* Reset margin */
+    }
+    .header {
+        font-size: 20px; /* Smaller font size */
+    }
+
+    .header nav ul li a {
+        font-size: 18px; /* Smaller font size for links */
+    }
+
+    form h2 {
+        font-size: 30px; /* Smaller heading size */
+    }
+
+    form h3 {
+        font-size: 20px; /* Smaller subheading size */
+    }
+
+    .text-container h2 {
+        font-size: 30px; /* Smaller title size */
+    }
+
+    .cart-button {
+        width: 50px; /* Smaller cart button */
+        height: 50px; /* Smaller cart button */
+        font-size: 20px; /* Smaller icon */
+    }
+.background-container {
+            background-image: url('bck.jpg');
+            opacity: 0.3;
+            width: 100%;
+            height: 500%;
+            position: absolute;
+            z-index: -1;
+}
+form {
+    width: 90%; /* Adjust width as needed */
+    margin: 10px 0; /* Space between elements */
+    height: auto;
+    padding: 20px;
+    background-color: rgba(202, 17, 31, 1);
+    border-radius: 10px;
+    font-weight: 250;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    color: #FFFFFF;
+}
+    .checkout-container {
+        flex-direction: column; /* Stack the checkout form and order summary vertically */
+        align-items: center; /* Center align items */
+    }
+
+    .checkout-form, .order-summary {
+        width: 90%; /* Full width for smaller screens */
+        margin-bottom: 20px; /* Space between the two sections */
+    }
+}
+}
+    </style>
+</head>
+<body>
+    <div class="background-container"></div>
+    <div class="header">
+        <h1><img src="CClogo.jpg" alt="Ciao Chow Logo" height="85px" class="logo"> Ciao, Chow</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Blogs.html">Blogs</a></li>
+                <li><a href="Order-Here.html" class="active">Order Here</a></li>
+                <li class="dropdown">
+                    <button class="dropbtn">Follow Us 
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="https://www.facebook.com/share/vu9PJ75qiS8SiX74/?mibextid=LQQJ4d">Facebook</a>
+                        <a href="https://www.instagram.com/ciao.chow.ph?igsh=MW52Y2lpYTZudTN1cg==&utm_source=qr">Instagram</a>
+                        <a href="https://www.tiktok.com/@ciao.chow.ph?_t=8pctJCV9D1w&_r=1">TikTok</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+<div class="about-us-section">
+    <img src="bck7.png" alt="About Us" class="about-us-image"> <!-- Replace with your image source -->
+</div>
+
+    <div class="checkout-container">
+        <div class="checkout-form">
+            <h2>Checkout</h2>
+            <input type="text" placeholder="Your Name" required>
+            <input type="text" placeholder="Your Address" required>
+            <input type="text" placeholder="Phone Number" required>
+            <input type="text" placeholder="Payment Details" required>
+            <button type="submit">Submit Order</button>
+        </div>
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <div id="orderItems"></div>
+            <p id="orderTotal"></p>
+        </div>
+    </div>
+
+ <footer id="contact">
+        <div class="footer-content">
+            <p>Contact Us At: <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=CllgCJZWPGHCLcWtCBdwBNhRjDNCrXRwZHknrVSnzpPZjjLwBCqcDjBrpkGvrgXmDlBpSMlKWZg">atciaochow@gmail.com</a></p>
+            <p>&copy; 2024 Ciao, Chow PH</p>
+        </div>
+    </footer>
+
+    <script>// Update cart display
+function updateCartDisplay() {
+    const cartItemsContainer = document.getElementById('cartItems');
+    const totalAmountContainer = document.getElementById('totalAmount');
+    cartItemsContainer.innerHTML = ''; // Clear previous items
+    let totalAmount = 0;
+
+    cart.forEach(item => {
+        const itemElement = document.createElement('div');
+        itemElement.textContent = `${item.name} - ₱${item.price}`; // Update to PHP
+        cartItemsContainer.appendChild(itemElement);
+        totalAmount += parseFloat(item.price);
+    });
+
+    totalAmountContainer.textContent = `Total Amount: ₱${totalAmount.toFixed(2)}`; // Update to PHP
+}
+
+// Load cart items on checkout page
+function loadCartItems() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const orderItemsContainer = document.getElementById('orderItems');
+    const orderTotalContainer = document.getElementById('orderTotal');
+    let totalAmount = 0;
+
+    cart.forEach(item => {
+        const itemElement = document.createElement('div');
+        itemElement.textContent = `${item.name} - ₱${item.price}`; // Update to PHP
+        orderItemsContainer.appendChild(itemElement);
+        totalAmount += parseFloat(item.price);
+    });
+
+    orderTotalContainer.textContent = `Total Amount: ₱${totalAmount.toFixed(2)}`; // Update to PHP
+}
+
+// Call loadCartItems when the checkout page loads
+document.addEventListener('DOMContentLoaded', loadCartItems);
+    </script>
+</body>
+</html>       

@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciao, Chow</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <style media="screen">
+        *,
+        *:before,
+        *:after {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #FFFFFF;
+            margin: 0;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            color: #FFFFFF;
+            font-size: 30px;
+            font-weight: 250;
+            letter-spacing: 0.5px;
+            backdrop-filter: blur(10px);
+            border: 3px solid rgba(198, 189, 179, 0.1);
+            background-color: rgba(202, 17, 31, 1);
+            padding: 12px;
+        }
+        .header h1 {
+           font-family: 'Poppins', sans-serif;
+            color: #FFFFFF;
+            font-size: 60px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            margin-left: 10%;
+        }
+        .header nav {
+            display: flex;
+        }
+        .header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+        .header nav ul li {
+            margin: 0 10px;
+        }
+        .header nav ul li a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 250;
+            font-size: 25px;
+            line-height: 1;
+            padding: 5px 0;
+        }
+        .header nav ul li a:hover {
+            color: #CCCCCC;
+        }
+        .header nav ul li a.active {
+            color: #CCCCCC;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown .dropbtn {
+            font-family: 'Poppins', sans-serif;
+            font-size: 25px;
+            font-weight: 250;
+            letter-spacing: 0.5px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 5px 0;
+            background-color: rgba(202, 17, 31, 1);
+            margin: 0;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(202, 17, 31, 1);
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            top: 100%;
+            left: 0;
+        }
+        .dropdown-content a {
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: 250;
+            letter-spacing: 0.5px;
+            color: #FFFFFF;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            color: #CCCCCC;
+            background-color: rgba(202, 17, 31, 1);
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .background-container {
+            background-image: url('bck.jpg');
+            opacity: 0.3;
+            width: 100%;
+            height: 600%;
+            position: absolute;
+            z-index: -1;
+        }
+        form {
+            margin-top: 50px; 
+            margin-left: 200px;
+            top: 55%;
+            width: 400px;
+            height: 520px;
+            padding: 20px;
+            background-color: rgba(202, 17, 31, 1);
+            border-radius: 10px;
+            font-weight: 250;
+            font-size: 15px;
+            font-family: 'Poppins', sans-serif;
+            color: #FFFFFF;
+        }
+        form * {
+            font-family: 'Poppins', sans-serif;
+            color: #FFFFFF;
+            letter-spacing: 0.5px;
+            outline: none;
+            border: none;
+        }
+        form h2 {
+            font-size: 55px;
+            font-weight: 500;
+            line-height: 42px;
+            text-align: center;
+        }
+        form h3 {
+            font-size: 35px;
+            font-weight: 250;
+            line-height: 42px;
+            text-align: center;
+        }
+        form img.logo {
+    display: block;
+    margin: 40px auto 0; 
+    vertical-align: middle;
+}
+.logo {
+  margin-right: 10px;
+  vertical-align: middle;
+}
+        button {
+            margin-top: 10px;
+            width: 100%;
+            background-color: rgba(202, 17, 31, 1);
+            color: #FFFFFF;
+            padding: 8px 0;
+            font-size: 11px;
+            font-weight: 250;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .page-description {
+            margin-top: 50px; 
+            margin-right: 200px;
+            top: 55%;
+            width: 400px;
+            height: 520px;
+            padding: 20px;
+            background-color: rgba(202, 17, 31, 1);
+            border-radius: 10px;
+            font-weight: 250;
+            font-size: 15px;
+            font-family: 'Poppins', sans-serif;
+            color: #FFFFFF;
+        }
+        .text-container h2 {
+            font-size: 55px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 80px; /* Added margin for spacing */
+        }
+        main {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 20px; /* Added margin for spacing */
+        }
+        .menu-card {
+            width: calc(25% - 20px); /* Adjust for 4 items per row with gaps */
+            height: 350px;
+            background-color: #FFFFFF;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .menu-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .menu-card h3, .menu-card p {
+            margin: 10px 0;
+        }
+        .menu-card:hover {
+            transform: scale(1.05);
+        }
+        .add-to-cart-btn {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(202, 17, 31, 1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #FFFFFF;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            display: none;
+        }
+        .menu-card:hover .add-to-cart-btn {
+            display: flex;
+        }
+        .add-to-cart-btn:hover {
+            background-color: #218838;
+            transform: scale(1.1);
+        }
+        .blog-container {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            margin: 20px; /* Added margin for spacing */
+            flex-wrap: wrap; /* Allow wrapping for smaller screens */
+        }
+        .blog-box {
+            width: calc(20% - 20px); /* Adjust to fit 5 blog boxes in a row */
+            background-color: #FFFFFF;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .blog-box img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .blog-box h3 {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #333;
+        }
+        .blog-box p {
+            font-size: 14px;
+            color: #666;
+            margin: 10px 0;
+        }
+        .read-more-btn {
+            display: inline-block;
+            background-color: rgba(202, 17, 31, 1);
+            color: #FFFFFF;
+            padding: 10px 20px;
+            font-size: 14px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .read-more-btn:hover {
+            background-color: #AA141F;
+        }
+        footer {
+            background-color: rgba(202, 17, 31, 1);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .footer-content a {
+            color: #ffc107;
+            text-decoration: none;
+        }
+        .footer-content a:hover {
+            text-decoration: underline;
+        }
+        .enlarged-image-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+        .enlarged-image-container img {
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+        .enlarged-image-container span {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+.cart-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(202, 17, 31, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: rgba(202, 17, 31, 1);
+}
+
+.cart-button:hover {
+    background-color: rgba(202, 17, 31, 1);
+}
+
+.cart-display {
+    position: fixed;
+    top: 20%;
+    right: 20px;
+    width: 300px;
+    background-color: #FFFFFF;
+    color: rgba(202, 17, 31, 1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.cart-display h2 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 250;
+    font-size: 15px;
+}
+
+.cart-display p {
+    margin: 10px 0;
+}
+.about-us-section {
+    text-align: center;
+    margin: px 0; /* Adjust margin as needed */
+}
+
+.about-us-image {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 400px; /* Limit the height */
+    object-fit: cover; /* Cover the area without distortion */
+}
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px; /* Space below the About Us image */
+}
+
+.form-container, .page-description, .reviews-container {
+    width: 400px; /* Same width for all */
+    height: 520px; /* Same height for all */
+    background-color: rgba(202, 17, 31, 1);
+    margin-top: 50px; 
+    border-radius: 10px;
+    padding: 20px;
+    color: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
+}
+
+.reviews-box {
+    text-align: center;
+    height: 100%; /* Full height */
+}
+
+.review {
+    display: none; /* Hide all reviews initially */
+}
+
+.review.active {
+    display: block; /* Show the active review */
+}
+
+.reviews-container {
+    display: flex;
+    align-items: center; /* Center align items vertically */
+    justify-content: space-between; /* Space between arrows and review box */
+    width: 400px; /* Same width as other containers */
+}
+
+.review-arrows {
+    flex: 0 0 auto; /* Prevent arrows from growing */
+}
+
+.arrow {
+    background-color: rgba(202, 17, 31, 1);
+    border: none;
+    color: #FFFFFF;
+    font-size: 30px; /* Increase size of arrows */
+    cursor: pointer;
+    padding: 10px; /* Add padding for better click area */
+    border-radius: 5px; /* Optional: rounded corners */
+    transition: background-color 0.3s;
+}
+
+.arrow:hover {
+    background-color: #AA141F; /* Change color on hover */
+}
+.promo-section {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between the image and the box */
+    align-items: center; /* Center align items vertically */
+    margin: 40px 0; /* Space above and below the promo section */
+}
+
+.promo-image-container {
+    padding-right: 20px; /* Space between image and promo box */
+}
+
+.promo-image {
+    width: 90%; /* Set the width to match the promo box */
+    height: 400px; /* Set the height to match the promo box */
+    margin-left: 50px;
+    object-fit: cover; /* Cover the area without distortion */
+    border-radius: 10px; /* Optional: add rounded corners */
+}
+
+.promo-box {
+    display: flex; /* Use flexbox for layout */
+    width: 600px; /* Match the width of the promo image */
+    height: 400px; /* Match the height of the promo image */
+    margin-right: 50px;
+    align-items: center; /* Center items vertically */
+    background-color: rgba(202, 17, 31, 1); /* Background color */
+    color: #FFFFFF; /* Text color */
+    padding: 20px; /* Padding inside the box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+.promo-box h2 {
+    font-size: 25px; /* Font size for the heading */
+    color: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 10px; /* Space below the heading */
+}
+
+.promo {
+    display: none; /* Hide all reviews initially */
+}
+
+.promo.active {
+    display: block; /* Show the active review */
+}
+
+.promo-box ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+.promo-box li {
+    margin-bottom: 5px; /* Space between list items */
+}
+
+.promo-arrows {
+    flex: 0 0 auto; /* Prevent arrows from growing */
+}
+
+.promo-arrows button {
+    background-color: rgba(202, 17, 31, 1);
+    border: none;
+    color: #FFFFFF;
+    font-size: 30px; /* Size of the arrow icons */
+    cursor: pointer;
+    padding: 10px; /* Add padding for better click area */
+    border-radius: 5px; /* Optional: rounded corners */
+    transition: background-color 0.3s;
+}
+
+.promo-arrows button:hover {
+    background-color: #AA141F; /* Change color on hover */
+}
+
+.promo-content {
+    flex: 1; /* Allow the content to take up remaining space */
+    text-align: center; /* Center the text */
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+}
+
+.promo-item {
+    display: none; /* Hide all promotions initially */
+}
+
+.promo-item.active {
+    display: block; /* Show the active promotion */
+}
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Stack header items vertically */
+        align-items: center; /* Center align items */
+    }
+.header h1 {
+           font-family: 'Poppins', sans-serif;
+            color: #FFFFFF;
+            font-size: 45px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            margin-left: 2%;
+        }
+
+    .header .logo {
+        font-size: 17px; /* Smaller font size for logo */
+   
+    }
+
+    .header nav ul {
+        flex-direction: row; /* Keep nav items in a row */
+        width: 100%; /* Full width for nav */
+        justify-content: center; /* Center nav items */
+        padding: 0; /* Remove padding */
+    }
+
+    .header nav ul li {
+        margin: 0 10px; /* Space between navigation items */
+    }
+
+    .header nav ul li a {
+        font-size: 14px; /* Adjust font size for mobile */
+        display: block; /* Make the link a block element */
+        padding: 10px; /* Add padding for better touch targets */
+    }
+.dropdown .dropbtn {
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 250;
+        }
+        .dropdown-content a {
+             font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 250;
+        }
+
+    .content-container {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center align items */
+        width: 100%; /* Full width */
+        margin: 0; /* Reset margin */
+    }
+
+    .form-container, 
+    .page-description, 
+    .reviews-container {
+        width: 90%; /* Full width on smaller devices */
+        margin: 10px 0; /* Space between elements */
+        height: auto; /* Allow height to adjust */
+    }
+
+    .reviews-container {
+        display: flex;
+        flex-direction: column; /* Stack reviews vertically */
+        align-items: center; /* Center align reviews */
+        width: 100%; /* Full width */
+    }
+
+    .review-arrows {
+        margin: 10px 0; /* Space around arrows */
+    }
+
+    .menu-card {
+        width: calc(50% - 10px); /* Two items per row */
+        height: auto; /* Allow height to adjust */
+    }
+
+    .blog-box {
+        width: calc(100% - 20px); /* Full width for blog boxes */
+    }
+
+    .promo-section {
+        flex-direction: column; /* Stack promo image and box vertically */
+        align-items: center; /* Center align items */
+        margin: 20px 0; /* Space around the promo section */
+    }
+
+    .promo-image-container {
+        width: 100%; /* Full width for the promo image */
+        margin-bottom: 10px; /* Space below the promo image */
+   
+    }
+
+    .promo-image {
+        width: 90%; /* Full width for the promo image */
+        height: auto; /* Maintain aspect ratio */
+        margin-left: 7%;
+       
+    }
+
+    .promo-box {
+        width: 90%; /* Full width for the promo box */
+        margin: 0; /* Reset margin */
+    }
+    .header {
+        font-size: 20px; /* Smaller font size */
+    }
+
+    .header nav ul li a {
+        font-size: 18px; /* Smaller font size for links */
+    }
+
+    form h2 {
+        font-size: 30px; /* Smaller heading size */
+    }
+
+    form h3 {
+        font-size: 20px; /* Smaller subheading size */
+    }
+
+    .text-container h2 {
+        font-size: 30px; /* Smaller title size */
+    }
+
+    .cart-button {
+        width: 50px; /* Smaller cart button */
+        height: 50px; /* Smaller cart button */
+        font-size: 20px; /* Smaller icon */
+    }
+.background-container {
+            background-image: url('bck.jpg');
+            opacity: 0.3;
+            width: 100%;
+            height: 1500%;
+            position: absolute;
+            z-index: -1;
+}
+form {
+    width: 90%; /* Adjust width as needed */
+    margin: 10px 0; /* Space between elements */
+    height: auto;
+    padding: 20px;
+    background-color: rgba(202, 17, 31, 1);
+    border-radius: 10px;
+    font-weight: 250;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    color: #FFFFFF;
+}
+}
+    </style>
+</head>
+<body>
+    <div class="background-container"></div>
+    <div class="header">
+        <h1><img src="CClogo.jpg" alt="Ciao Chow Logo" height="85px" class="logo"> Ciao, Chow</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Blogs.html">Blogs</a></li>
+                <li><a href="Order-Here.html" class="active">Order Here</a></li>
+                <li class="dropdown">
+                    <button class="dropbtn">Follow Us 
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="https://www.facebook.com/share/vu9PJ75qiS8SiX74/?mibextid=LQQJ4d">Facebook</a>
+                        <a href="https://www.instagram.com/ciao.chow.ph?igsh=MW52Y2lpYTZudTN1cg==&utm_source=qr">Instagram</a>
+                        <a href="https://www.tiktok.com/@ciao.chow.ph?_t=8pctJCV9D1w&_r=1">TikTok</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+<div class="about-us-section">
+    <img src="bck6.png" alt="About Us" class="about-us-image"> <!-- Replace with your image source -->
+</div>
+
+<div class="promo-section">
+    <div class="promo-image-container">
+        <img src="bck4.png" alt="Ongoing Promo" class="promo-image"> <!-- Promo Image -->
+    </div>
+    <div class="promo-box">
+        <div class="promo-arrows">
+            <button class="arrow left-arrow"><i class="fas fa-chevron-left"></i></button>
+        </div>
+        <div class="promo-content">
+            <h2>Ongoing Promotions</h2>
+            <ul class="promo-list">
+                <li class="promo-item active">Secret Menu of the Week<br>Flavor of the Month<br>Happy Hour Specials 2PM-5PM<br>Loyalty Deals<br>Chow Smart, Save Green<br>BYOU: Bring Your Own Utensils<br>Reuse to Reduce<br></li>
+                <li class="promo-item">20% off on orders above $50!</li>
+                <li class="promo-item">Happy Hour: 2 PM - 5 PM discounts!</li>
+                <li class="promo-item">Free dessert with every meal!</li>
+            </ul>
+        </div>
+        <div class="promo-arrows">
+            <button class="arrow right-arrow"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+</div>
+
+    <div class="text-container">
+        <h2>Ciao, Chow Menu</h2>
+    </div>
+    
+    <main id="menu">
+        <div class="menu-card" data-name="Pho Real" data-price="280">
+            <img src="Food4.png" alt="Pho">
+            <h3>Pho Real</h3>
+            <p>Price: 280</p>
+            <div class="add-to-cart-btn">
+                <i class="fas fa-cart-plus"></i>
+            </div>
+        </div>
+<div class="menu-card" data-name="Almighty Pizza" data-price="550">
+            <img src="Food1.png" alt="Pizza">
+            <h3>Almighty Pizza</h3>
+            <p>Price: 550</p>
+            <div class="add-to-cart-btn">
+                <i class="fas fa-cart-plus"></i>
+            </div>
+        </div>
+<div class="menu-card" data-name="Ciao Pizza" data-price="380">
+            <img src="Food7.png" alt="Pizza">
+            <h3>Ciao Pizza</h3>
+            <p>Price: 380</p>
+            <div class="add-to-cart-btn">
+                <i class="fas fa-cart-plus"></i>
+            </div>
+        </div>
+        <div class="menu-card" data-name="Fiesta Fries" data-price="200">
+            <img src="Food6.png" alt="Gelato">
+            <h3>Fiesta Fries</h3>
+            <p>Price: 200</p>
+            <div class="add-to-cart-btn">
+                <i class="fas fa-cart-plus"></i>
+            </div>
+        </div>
+<div class="menu-card" data-name="Mozza Madness" data-price="155">
+            <img src="Food17.png" alt="Gelato">
+            <h3>Mozza Madness</h3>
+            <p>Price: 155</p>
+            <div class="add-to-cart-btn">
+                <i class="fas fa-cart-plus"></i>
+            </div>
+        </div>
+<div class="menu-card" data-name="Aloha Burger" data-price="250">
+            <img src="Food10.png" alt="Gelato">
+            <h3>Aloha Burger</h3>
+            <p>Price: 250</p>
+            <div class="add-to-cart-btn">
+                <i class="fas fa-cart-plus"></i>
+            </div>
+        </div>
+<div class="menu-card" data-name="Beefy Burger" data-price="250">
+            <img src="Food2.png" alt="Gelato">
+            <h3>Beefy Burger</h3>
+            <p>Price: 250</p>
+            <div class="add-to-cart-btn">
+                <i class="fas fa-cart-plus"></i>
+            </div>
+        </div>
+        <div class="menu-card" data-name="Swirly Spaghetti" data-price="180">
+            <img src="Food20.png" alt="Gelato">
+            <h3>Swirly Spaghetti</h3>
+            <p>Price: 180</p>
+            <div class="add-to-cart-btn">
+                <i class="fas fa-cart-plus"></i>
+            </div>
+        </div>
+<div class="menu-card" data-name="Bibim-Bam!" data-price="200">
+            <img src="Food18.png" alt="Gelato">
+            <h3>Bibim-Bam!</h3>
+            <p>Price: 200</p>
+            <div class="add-to-cart-btn">
+                <i class="fas fa-cart-plus"></i>
+            </div>
+        </div>
+<div class="menu-card" data-name="Fiesta Pancit" data-price="175">
+            <img src="Food11.png" alt="Gelato">
+            <h3>Fiesta Pancit</h3>
+            <p>Price: 175</p>
+            <div class="add-to-cart-btn">
+                <i class="fas fa-cart-plus"></i>
+            </div>
+        </div>
+<div class="menu-card" data-name="Katsu Craze" data-price="185">
+            <img src="Food19.png" alt="Gelato">
+            <h3>Katsu Craze</h3>
+            <p>Price: 185</p>
+            <div class="add-to-cart-btn">
+                <i class="fas fa-cart-plus"></i>
+            </div>
+        </div>
+<div class="menu-card" data-name="Veggie Vibes" data-price="185">
+            <img src="Food16.png" alt="Gelato">
+            <h3>Veggie Vibes</h3>
+            <p>Price: 185</p>
+            <div class="add-to-cart-btn">
+                <i class="fas fa-cart-plus"></i>
+            </div>
+        </div>
+<div class="menu-card" data-name="Adobo-lutely Perfect" data-price="150">
+            <img src="Food12.png" alt="Gelato">
+            <h3>Adobo-lutely Perfect</h3>
+            <p>Price: 150</p>
+            <div class="add-to-cart-btn">
+                <i class="fas fa-cart-plus"></i>
+            </div>
+        </div>
+<div class="menu-card" data-name="Macho Tacos" data-price="200">
+            <img src="Food9.png" alt="Gelato">
+            <h3>Macho Tacos</h3>
+            <p>Price: 200</p>
+            <div class="add-to-cart-btn">
+                <i class="fas fa-cart-plus"></i>
+            </div>
+        </div>
+<div class="menu-card" data-name="Taco the Town" data-price="175">
+            <img src="Food5.png" alt="Gelato">
+            <h3>Taco the Town</h3>
+            <p>Price: 175</p>
+            <div class="add-to-cart-btn">
+                <i class="fas fa-cart-plus"></i>
+            </div>
+        </div>
+<div class="menu-card" data-name="Winner's Chicken" data-price="250">
+            <img src="Food8.png" alt="Gelato">
+            <h3>Winner's Chicken</h3>
+            <p>Price: 250</p>
+            <div class="add-to-cart-btn">
+                <i class="fas fa-cart-plus"></i>
+            </div>
+        </div>
+<div class="menu-card" data-name="Gelato Grande" data-price="99">
+            <img src="Food3.png" alt="Gelato">
+            <h3>Gelato Grande</h3>
+            <p>Price: 99</p>
+            <div class="add-to-cart-btn">
+                <i class="fas fa-cart-plus"></i>
+            </div>
+        </div>
+<div class="menu-card" data-name="Breezy Bingsu" data-price="165">
+            <img src="Food15.png" alt="Gelato">
+            <h3>Breezy Bingsu</h3>
+            <p>Price: 165</p>
+            <div class="add-to-cart-btn">
+                <i class="fas fa-cart-plus"></i>
+            </div>
+        </div>
+<div class="menu-card" data-name="Hello Halo-Halo" data-price="85">
+            <img src="Food14.png" alt="Gelato">
+            <h3>Hello Halo-Halo</h3>
+            <p>Price: 85</p>
+            <div class="add-to-cart-btn">
+                <i class="fas fa-cart-plus"></i>
+            </div>
+        </div>
+<div class="menu-card" data-name="Berry Cool Tanghulu" data-price="75">
+            <img src="Food13.png" alt="Gelato">
+            <h3>Berry Cool Tanghulu</h3>
+            <p>Price: 75</p>
+            <div class="add-to-cart-btn">
+                <i class="fas fa-cart-plus"></i>
+            </div>
+        </div>
+    </main>
+
+<!-- Cart Button -->
+<div class="cart-button" onclick="toggleCart()">
+    <i class="fas fa-shopping-cart"></i>
+</div>
+
+<!-- Cart Display Section -->
+<div id="cartDisplay" class="cart-display" style="display: none;">
+    <h2>My Cart</h2>
+    <div id="cartItems"></div>
+    <p id="totalAmount"></p>
+    <button onclick="proceedToCheckout()">Proceed to Checkout</button>
+</div>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <p>Contact Us At: <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=CllgCJZWPGHCLcWtCBdwBNhRjDNCrXRwZHknrVSnzpPZjjLwBCqcDjBrpkGvrgXmDlBpSMlKWZg">atciaochow@gmail.com</a></p>
+            <p>&copy; 2024 Ciao, Chow PH</p>
+        </div>
+    </footer>
+
+    <div class="enlarged-image-container" id="enlargedImageContainer">
+        <span onclick="closeEnlargedImage()">&times;</span>
+        <img id="enlargedImage" src="" alt="Enlarged Food">
+    </div>
+
+
+    <script>
+        // JavaScript for cart functionality and enlarged image view
+        const cart = [];
+        const menuCards = document.querySelectorAll('.menu-card');
+        const enlargedImageContainer = document.getElementById('enlargedImageContainer');
+        const enlargedImage = document.getElementById('enlargedImage');
+
+        menuCards.forEach(card => {
+            const addButton = card.querySelector('.add-to-cart-btn');
+            const img = card.querySelector('img');
+
+            addButton.addEventListener('click', () => {
+    const name = card.getAttribute('data-name');
+    const price = card.getAttribute('data-price');
+    cart.push({ name, price });
+    updateCartDisplay(); // Automatically update the cart display
+});
+
+            img.addEventListener('click', () => {
+                enlargeImage(img.src);
+            });
+        });
+
+        function enlargeImage(src) {
+            enlargedImage.src = src;
+            enlargedImageContainer.style.display = 'flex';
+        }
+
+        function closeEnlargedImage() {
+            enlargedImageContainer.style.display = 'none';
+        }
+
+        // Optional: Add a function to display the cart
+        function displayCart() {
+            if (cart.length === 0) {
+                alert("Your cart is empty.");
+                return;
+            }
+            let cartItems = "Items in your cart:\n";
+            cart.forEach(item => {
+                cartItems += `${item.name} - $${item.price}\n`;
+            });
+            alert(cartItems);
+        }
+function toggleCart() {
+    const cartDisplay = document.getElementById('cartDisplay');
+    cartDisplay.style.display = cartDisplay.style.display === 'none' ? 'block' : 'none';
+    updateCartDisplay(); // Update the cart display when toggling
+}
+
+function updateCartDisplay() {
+    const cartItemsContainer = document.getElementById('cartItems');
+    const totalAmountContainer = document.getElementById('totalAmount'); // Ensure this ID matches
+    cartItemsContainer.innerHTML = ''; // Clear previous items
+    let totalAmount = 0;
+
+    cart.forEach(item => {
+        const itemElement = document.createElement('div');
+        itemElement.textContent = `${item.name} - ₱${item.price}`; // Update to PHP
+        cartItemsContainer.appendChild(itemElement);
+        totalAmount += parseFloat(item.price);
+    });
+
+    totalAmountContainer.textContent = `Total Amount: ₱${totalAmount.toFixed(2)}`; // Update to PHP
+}
+
+// Proceed to checkout
+function proceedToCheckout() {
+    // Redirect to checkout page
+    window.location.href = 'Checkout.html'; // Make sure to create this page
+}
+    const reviews = document.querySelectorAll('.review');
+    let currentReviewIndex = 0;
+
+    // Show the first review
+    reviews[currentReviewIndex].classList.add('active');
+
+    document.querySelector('.left-arrow').addEventListener('click', () => {
+        reviews[currentReviewIndex].classList.remove('active');
+        currentReviewIndex = (currentReviewIndex - 1 + reviews.length) % reviews.length; // Loop back to the last review
+        reviews[currentReviewIndex].classList.add('active');
+    });
+
+    document.querySelector('.right-arrow').addEventListener('click', () => {
+        reviews[currentReviewIndex].classList.remove('active');
+        currentReviewIndex = (currentReviewIndex + 1) % reviews.length; // Loop back to the first review
+        reviews[currentReviewIndex].classList.add('active');
+    });
+
+const promoItems = document.querySelectorAll('.promo-item');
+let currentPromoIndex = 0;
+
+// Show the first promo item
+promoItems[currentPromoIndex].classList.add('active');
+
+function updatePromoImage() {
+    const promoImages = [
+        'food1.png', // Replace with your actual image paths
+        'food2.png',
+        'food3.png',
+        'food4.png'
+    ];
+    document.querySelector('.promo-image').src = promoImages[currentPromoIndex];
+}
+
+// Left arrow functionality
+document.querySelector('.left-arrow').addEventListener('click', () => {
+    promoItems[currentPromoIndex].classList.remove('active');
+    currentPromoIndex = (currentPromoIndex - 1 + promoItems.length) % promoItems.length; // Loop back to the last promo
+    promoItems[currentPromoIndex].classList.add('active');
+    updatePromoImage(); // Update the image
+});
+
+// Right arrow functionality
+document.querySelector('.right-arrow').addEventListener('click', () => {
+    promoItems[currentPromoIndex].classList.remove('active');
+    currentPromoIndex = (currentPromoIndex + 1) % promoItems.length; // Loop back to the first promo
+    promoItems[currentPromoIndex].classList.add('active');
+    updatePromoImage(); // Update the image
+});
+</script>
+</body>
+</html>       
